@@ -22,7 +22,7 @@ This is my personal bug bounty learning space — where I create **one solid gui
 ---
 ## Repo Contents
 
-- [How-to Guides](./how-to-guides) — Detailed tutorials and learning resources to master bug bounty hunting and related skills.
+- [How-to Guides](./How-to guides) — Detailed tutorials and learning resources to master bug bounty hunting and related skills.
 
 ---
 
