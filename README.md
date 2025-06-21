@@ -1,12 +1,30 @@
-# Offensivesec-kit
-A growing bug bounty hunting toolkit built through disciplined learning and real attempts.
+# My Bug Bounty Journey & Learning Repo
 
-This repo is my space to:
+This is my personal bug bounty learning space — where I create **one solid guide at a time**, build **tools as I go**, and store **all my findings and reports**.
 
-Share practical how-to guides as I learn new vulnerabilities and techniques
+---
 
-Develop and organize simple tools and scripts to aid in recon and testing
+## What’s This For?
 
-Document bug writeups and lessons from valid findings, once I start getting them
+- I learn by teaching myself through writing detailed guides.  
+- Every guide you see here is something I’ve worked hard to understand and master.  
+- Tools? They’re coming soon — scripts to help with recon, automation, and more.  
+- I keep all my bug bounty reports here too, as proof of real work, but they will have no pay because of age and country restrictions.
 
-This is a work in progress, open for anyone serious about leveling up with me.
+---
+
+## How You Can Use It
+
+- Follow the guides to learn with me.  
+- Watch this space for new tools and scripts.  
+- Check out the bug reports to see how I apply what I learn.
+
+---
+## Repo Contents
+
+- [How-to Guides](./how-to-guides) — Detailed tutorials and learning resources to master bug bounty hunting and related skills.
+
+---
+
+Thanks for stopping by, feel free to learn, contribute, or just follow along. Let’s grow stronger together.
+
