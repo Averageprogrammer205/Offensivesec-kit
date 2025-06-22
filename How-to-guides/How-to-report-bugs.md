@@ -223,13 +223,15 @@ Before submission, use the following final checklist to ensure the report meets 
 
 ### ✅ Final Report Checklist
 
+- [ ] **The Description clearly explains what the bug is and how it works.**  
+      Includes root cause, affected functionality, and technical context.
 - [ ] Steps to Reproduce are clear, numbered, and complete.
 - [ ] Payloads, test data, and relevant request details are included.
 - [ ] Proof of Concept contains strong technical evidence (e.g. screenshot, HTTP request, or script).
 - [ ] The Impact section ties the bug to real-world consequences with justified severity.
 - [ ] A suggested mitigation or fix is included, or its absence is clearly stated.
 - [ ] The report is logically structured, free of unnecessary content or speculation.
-- [ ] Formatting is clean, consistent, and readable (headings, bullets, spacing, etc).
+- [ ] Formatting is clean, consistent, and readable (headings, bullets, spacing, etc)..
 
 ## Effective-Reports-in-Action
 
