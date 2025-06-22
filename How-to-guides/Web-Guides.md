@@ -1,18 +1,17 @@
 # Complete Guide Catalog (Web Versions)
 
-Welcome to the full list of my bug bounty guides, all available in easy-to-read web format.
-
+Welcome to the full list of my bug bounty guides, all available in easy-to-read web format. I decided to add site versions of my courses so that accessing them becomes more user friendly,so here are the site versions of my guides:
 ---
 
-## Recon Guides
+## Recon Guides:
+(coming soon)
 
+## Web Application Testing:
+(coming soon)
 
-## Web Application Testing
+## Reporting and Methodology:
 
-
-## Reporting and Methodology
-
-- [Writing Effective Bug Reports](https://yourusername.github.io/yourrepo/How-to-guides/html/bug-reporting.html)  
+- [Writing Effective Bug Reports](https://averageprogrammer205.github.io/Offensivesec-kit/)  
 
 ---
 

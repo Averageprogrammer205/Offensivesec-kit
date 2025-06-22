@@ -14,6 +14,8 @@
 
 ## Introduction
 
+> **🔗 Check out the full website version of this guide here: (https://Averageprogrammer205.github.io/Offensivesec-kit/)*
+
 As a bug bounty hunter, your job isn’t just to find vulnerabilities, it’s to clearly explain them too.
 
 And while finding bugs might sound like the “hard part,” the truth is writing a solid report is just as important. A good report helps the triage team quickly understand what’s wrong, how to reproduce it, and why it matters. That means *faster* responses, *fewer* misunderstandings, and *way better odds of getting paid.*
