@@ -1,0 +1,118 @@
+/* 1) Smooth anchor scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 2) Hide nested (### and deeper) nav elements inside TOC sidebar */
+.md-nav--secondary ul.md-nav__list ul,
+.md-nav--secondary ul.md-nav__list ul *,
+.md-nav--secondary ul.md-nav__list > li.md-nav__item > nav,
+.md-nav--secondary nav[aria-label],
+.md-nav--secondary nav[aria-label] * {
+  display: none !important;
+}
+
+/* 3) Sidebar container */
+.md-nav--secondary {
+  width: 320px !important;
+  box-sizing: border-box !important;
+  padding-left: 0 !important;
+  border-left: 3px solid #00bfa6 !important;
+  background: #fafbfc !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  box-shadow: inset -1px 0 0 rgba(255,255,255,0.1) !important;
+}
+
+/* 4) Remove default list padding/margin */
+.md-nav--secondary ul.md-nav__list {
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+}
+
+/* 5) Top‐level items (##) */
+.md-nav--secondary ul.md-nav__list > li.md-nav__item {
+  margin: 6px 0 !important;
+  padding: 0 !important;
+  border-top: none !important;
+  box-sizing: border-box !important;
+}
+
+/* 6) Remove border-top on first item */
+.md-nav--secondary .md-nav__item:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  border-top: none !important;
+}
+
+/* 7) Links: flush‐left, wrap, no scroll, vertical padding */
+.md-nav--secondary ul.md-nav__list > li.md-nav__item > a {
+  display: block !important;
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  padding: 6px 0 !important;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--md-default-fg-color) !important;
+  font-family: var(--md-text-font, 'Inter', sans-serif) !important;
+  text-decoration: none !important;
+  line-height: 1.6em !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  transition: background 0.2s, color 0.2s !important;
+  transform: translateX(4px) !important;                         /* base nudge */
+  transition: transform 0.2s ease, background 0.2s ease !important;
+}
+
+/* 8) Wrap ellipsis span */
+.md-nav--secondary ul.md-nav__list > li.md-nav__item > a span.md-ellipsis {
+  display: inline-block !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  word-break: break-word !important;
+  box-sizing: border-box !important;
+}
+
+/* 9) Active link styling (flush‐left, no nudge) */
+.md-nav--secondary ul.md-nav__list > li.md-nav__item > a.md-nav__link--active {
+  background-color: rgba(0,0,0,0.04) !important;
+  color: #00e676 !important;
+  font-weight: 700 !important;
+  padding: 6px 0 !important;
+  margin: 0 !important;
+  border-left: none !important;
+  transform: none !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+/* 10) Hover effect & nudge to 8px */
+.md-nav--secondary ul.md-nav__list > li.md-nav__item > a:hover {
+  background-color: rgba(0,0,0,0.05) !important;
+  transform: translateX(8px) !important;
+  transition: transform 0.2s ease, background 0.2s ease !important;
+}
+
+/* 11) Kill any leftover horizontal scroll in sidebar wrapper */
+.md-sidebar__scrollwrap {
+  overflow-x: hidden !important;
+}
+
+/* Keep the TOC link green & bold while its section is in view */
+.md-nav--secondary ul.md-nav__list > li.md-nav__item > a.md-nav__link--active {
+  /* background + text color */
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: #00e676 !important;
+  /* bold for emphasis */
+  font-weight: 700 !important;
+  /* keep same padding as normal so it doesn't shift */
+  padding: 6px 0 !important;
+  margin: 0 !important;
+  /* no transform—only hover nudges */
+  transform: none !important;
+}

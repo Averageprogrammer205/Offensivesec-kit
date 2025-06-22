@@ -1,0 +1,1160 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A professional bug bounty report writing guide">
+      
+      
+        <meta name="author" content="Bytephanto0m">
+      
+      
+        <link rel="canonical" href="https://Averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>How to Report Bugs - Bug Bounty Guide</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="/Offensivesec-kit/css/fix-toc-depth.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#how-to-write-a-good-bug-bounty-report" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Bug Bounty Guide" class="md-header__button md-logo" aria-label="Bug Bounty Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Bug Bounty Guide
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              How to Report Bugs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Bug Bounty Guide" class="md-nav__button md-logo" aria-label="Bug Bounty Guide" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Bug Bounty Guide
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    How to Report Bugs
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    How to Report Bugs
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-include-in-the-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 What to Include in the Description:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-reproduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to Reproduce
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to Reproduce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ What to Do:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proof-of-concept-poc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof of Concept (PoC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proof of Concept (PoC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advice-for-presenting-a-poc" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 Advice for Presenting a PoC:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impact-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impact Explanation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impact Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-strong-impact-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      💥 What Makes a Strong Impact Section:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonus-tip-think-like-the-attacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Bonus Tip: Think like the attacker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-fix-or-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Fix or Mitigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Suggested Fix or Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-strong-mitigation-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 What makes a strong mitigation section
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes to Avoid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-missing-or-unclear-reproduction-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Missing or unclear reproduction steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-including-unnecessary-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Including unnecessary details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lacking-solid-proof-of-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Lacking solid proof of concept
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-weak-or-vague-impact-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Weak or vague impact description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-providing-vague-or-generic-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Providing vague or generic fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-poor-organization-and-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Poor organization and formatting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-final-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Final Checks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary and Final Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-report-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Final Report Checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effective-reports-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Effective-Reports-in-Action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Effective-Reports-in-Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-good-reports-to-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some good reports to study:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Description">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-include-in-the-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      📌 What to Include in the Description:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steps-to-reproduce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steps to Reproduce
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps to Reproduce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-to-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ What to Do:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#proof-of-concept-poc" class="md-nav__link">
+    <span class="md-ellipsis">
+      Proof of Concept (PoC)
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Proof of Concept (PoC)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advice-for-presenting-a-poc" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧾 Advice for Presenting a PoC:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#impact-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Impact Explanation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Impact Explanation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-strong-impact-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      💥 What Makes a Strong Impact Section:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bonus-tip-think-like-the-attacker" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 Bonus Tip: Think like the attacker
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggested-fix-or-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Suggested Fix or Mitigation
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Suggested Fix or Mitigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-a-strong-mitigation-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔧 What makes a strong mitigation section
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-mistakes-to-avoid" class="md-nav__link">
+    <span class="md-ellipsis">
+      Common Mistakes to Avoid
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Common Mistakes to Avoid">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-missing-or-unclear-reproduction-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Missing or unclear reproduction steps
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-including-unnecessary-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Including unnecessary details
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-lacking-solid-proof-of-concept" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Lacking solid proof of concept
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-weak-or-vague-impact-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Weak or vague impact description
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-providing-vague-or-generic-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Providing vague or generic fixes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-poor-organization-and-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Poor organization and formatting
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-and-final-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary and Final Checks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Summary and Final Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#final-report-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Final Report Checklist
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#effective-reports-in-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      Effective-Reports-in-Action
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Effective-Reports-in-Action">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#some-good-reports-to-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      Some good reports to study:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="how-to-write-a-good-bug-bounty-report">How to Write a Good Bug Bounty Report</h1>
+<p><em>The Most Important Skill Besides Actually Finding the Bug</em></p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#description">Description</a></li>
+<li><a href="#steps-to-reproduce">Steps to Reproduce</a></li>
+<li><a href="#proof-of-concept-poc">Proof of Concept</a></li>
+<li><a href="#impact-explanation">Impact Explanation</a></li>
+<li><a href="#suggested-fix-or-mitigation">Suggested Fix or Mitigation</a></li>
+<li><a href="#common-mistakes-to-avoid">Common Mistakes to Avoid</a></li>
+<li><a href="#summary-and-final-checks">Summary and Final Checks</a></li>
+<li><a href="#effective-reports-in-action">Effective Bug Bounty Reports in Action</a></li>
+</ol>
+<h2 id="introduction">Introduction</h2>
+<p>As a bug bounty hunter, your job isn’t just to find vulnerabilities, it’s to clearly explain them too.</p>
+<p>And while finding bugs might sound like the “hard part,” the truth is writing a solid report is just as important. A good report helps the triage team quickly understand what’s wrong, how to reproduce it, and why it matters. That means <em>faster</em> responses, <em>fewer</em> misunderstandings, and <em>way better odds of getting paid.</em></p>
+<p><strong>In fact, your ability to explain the bug often decides whether you get rewarded at all. So knowing how to report properly is not a side skill. It’s half the game.</strong></p>
+<p>This guide will walk you through writing <em>clear</em>, <em>valid</em>, and <em>professional</em> bug reports, the kind that get attention, not ignored.</p>
+<hr />
+<h2 id="description">Description</h2>
+<p><strong>This section explains what the bug <em>actually is</em>, how it works, and why it’s even a problem.</strong></p>
+<p>While the “Steps to Reproduce” walks them through <em>how</em> to trigger the bug, the Description makes sure they understand <em>what the core issue is</em>. Without it, you're just giving directions to a mystery destination.</p>
+<p>A strong description shows that:
+- You understand the technical root cause.
+- You aren't just repeating payloads—you know what broke.
+- You're helping the dev/triager mentally process the situation.</p>
+<h3 id="what-to-include-in-the-description">📌 What to Include in the Description:</h3>
+<ol>
+<li>
+<p><strong>What the bug is, clearly and simply</strong><br />
+   Example:  </p>
+<blockquote>
+<p>The application fails to validate redirect URLs, allowing open redirection via the <code>next</code> parameter on the login page.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>How the bug works under the hood</strong><br />
+   Even if you don’t have source code access, explain the logic flaw.  </p>
+<blockquote>
+<p>This happens because the server blindly redirects users to any value of the <code>next</code> parameter, without checking if it points to a trusted domain.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Any conditions or requirements</strong><br />
+   Tell them if the bug only happens under certain situations (e.g., must be logged in, must have a certain role, etc.)</p>
+</li>
+<li>
+<p><strong>Optional but strong: Explain the root security principle that’s violated</strong><br />
+   Tie it back to the OWASP category, if applicable. </p>
+<blockquote>
+<p>This is a violation of the "Unvalidated Redirects and Forwards" issue, as described in OWASP Top 10 (A10).</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h2 id="steps-to-reproduce">Steps to Reproduce</h2>
+<p>This is the most <em>critical</em> part of your report.<br />
+Even if the bug is valid, a messy or unclear reproduction section can lead to your report being misunderstood, rejected, or underpaid, and we absolutely don't want that.
+If you don't have a clear step by step guide to reproduce a bug, you don't have a report.</p>
+<p>Our goal in this part is to <strong>make it so that anyone, even someone unfamiliar with the target, can reproduce the bug step-by-step</strong>. This makes the Triage Team's job of fixing the bug easier.</p>
+<h3 id="what-to-do">✅ What to Do:</h3>
+<ol>
+<li>
+<p><strong>Be specific and complete</strong><br />
+   Write exactly what to click, where to go, what data to enter.<br />
+   Here's an example: instead of just telling them "Go to the login page", tell them <em>how to go to the login page</em>. Think of it like guiding someone through the bug over your shoulder.</p>
+</li>
+<li>
+<p><strong>Number each step</strong><br />
+   Always use a clean, ordered list or bullet points; don't make them feel like they are reading a wiki.
+   Triage teams don't read blocks of text.</p>
+</li>
+<li>
+<p><strong>Include test data or payloads</strong><br />
+   If you entered malicious input, give the exact string you used.<br />
+   Example:<br />
+<code>"&gt;&lt;script&gt;alert(1)&lt;/script&gt;</code></p>
+</li>
+<li>
+<p><strong>State what <em>should</em> happen vs. what <em>actually</em> happens</strong><br />
+   Example:</p>
+<blockquote>
+<p>Expected: The system rejects the input with a validation error. (what is supposed to happen.)
+Actual: The payload executes, and a popup appears. (what actually happened)
+   This is how you present a bug. In fact, this is the definition of a bug.</p>
+</blockquote>
+</li>
+</ol>
+<hr />
+<h2 id="proof-of-concept-poc">Proof of Concept (PoC)</h2>
+<p>(Quick heads-up: Don’t confuse the PoC with the Steps to Reproduce. The steps to reproduce exist <em>so that the Triage Team knows exactly how to trigger the bug, step by step</em>, while the Proof of Concept <em>shows the Triage Team concrete technical evidence that the bugs exist and can be exploited</em>. They are similar but <strong>serve different purposes</strong>.)</p>
+<p>The proof of concept is really just undeniable proof that the bug exists and is <em>something</em>. It's important to know that the Proof of Concept can vary wildly depending on your bug. Let's say your bug is a simple info leak; maybe your Proof of Concept could be just an HTTP request/response showing exposed data.</p>
+<p>Or maybe it's an XSS; then your Proof of Concept might just be the exact payload and a screenshot/video of the alert popup. It can also even be a script if your bug is complex (in that case, you have to include how the script should be executed and the requirements to execute it).</p>
+<h3 id="advice-for-presenting-a-poc">🧾 Advice for Presenting a PoC:</h3>
+<ol>
+<li>
+<p><strong>Use screenshots/videos:</strong>
+    This is a powerful way to present your PoC. You can screenshot a request, a payload, or show a video of multiple pieces of evidence.</p>
+</li>
+<li>
+<p><strong>Show a command or a script:</strong>
+    This is another powerful way to present a proof of concept. Although a script is <em>typically not always needed</em> (commands are way more common), if it's a complex bug, a script can really help the Triage team and <em>will</em> make your report clearer. Don't keep the developers guessing.</p>
+</li>
+<li>
+<p><strong>Show raw HTTP requests and responses:</strong><br />
+    If your bug involves web requests, include the exact HTTP request and response that demonstrate the vulnerability. This helps the triage team see the technical details and reproduce the issue accurately.</p>
+</li>
+<li>
+<p><strong>Redact or blur sensitive information in evidence</strong><br />
+    When sharing screenshots or videos, make sure to hide any personal data, credentials, or other sensitive details that are not relevant to the bug itself.</p>
+</li>
+<li>
+<p><strong>Keep it concise and relevant</strong><br />
+    Only include information that directly demonstrates the vulnerability. Avoid unnecessary details that could distract from the main issue.</p>
+</li>
+<li>
+<p><strong>Label and describe your evidence</strong><br />
+    Add brief captions or explanations to screenshots, videos, or code snippets so the reviewer knows exactly what they’re looking at and why it matters.</p>
+</li>
+</ol>
+<hr />
+<h2 id="impact-explanation">Impact Explanation</h2>
+<p><strong>This is where you show <em>why</em> the bug matters.</strong><br />
+If you found a bug, and did what we discussed earlier, that would mean that the triage team knows <em>what</em> the bug is, now our goal is <em>convince them it’s worth fixing, and worth paying for.</em></p>
+<h3 id="what-makes-a-strong-impact-section">💥 What Makes a Strong Impact Section:</h3>
+<ol>
+<li>
+<p><strong>Tie it to real harm</strong><br />
+   Can the attacker access sensitive data? Escalate privileges? Take over accounts? Steal money? Show why the bug is scary and dangerous.</p>
+</li>
+<li>
+<p><strong>Use severity language properly</strong>  </p>
+</li>
+<li><em>Critical</em>: Full account takeover, remote code execution, unauthenticated data breach.  </li>
+<li><em>High</em>: Authenticated sensitive info access, privilege escalation, major logic bypass.  </li>
+<li><em>Medium</em>: Partial information leak, CSRF with impact, authenticated issues.  </li>
+<li>
+<p><em>Low</em>: Minor bugs, limited scope or preconditions required.</p>
+</li>
+<li>
+<p><strong>Never drop vague potential, prove the path</strong><br />
+   Don’t say “this could lead to X” unless you explain <em>how</em>. Impact should feel inevitable, not hypothetical.</p>
+</li>
+</ol>
+<h3 id="bonus-tip-think-like-the-attacker">🧠 Bonus Tip: Think like the attacker</h3>
+<p>If you’re not sure how to describe impact, ask yourself :
+- "If I was a black hat, what could I pull off with this?"
+- "Could this lead to account takeover, data theft, system abuse, or loss of control?"</p>
+<h3 id="example">Example:</h3>
+<blockquote>
+<p><strong>Impact:</strong><br />
+This vulnerability allows an unauthenticated attacker to access any user’s booking details, including full pickup/drop-off addresses, phone numbers, and fare history. This can be exploited to track users in real-time, violating privacy and potentially enabling stalking or physical harm.</p>
+</blockquote>
+<hr />
+<h2 id="suggested-fix-or-mitigation">Suggested Fix or Mitigation</h2>
+<p>This part isn’t just about proving you can break things. It’s about showing that you understand how systems <em>should</em> work, and that you’re willing to help improve them.</p>
+<p>You’re not expected to know the exact code behind the scenes. But <em>giving a thoughtful fix makes your report easier to act on</em>, and shows you’re thinking like a builder, not just a breaker.</p>
+<h3 id="what-makes-a-strong-mitigation-section">🔧 What makes a strong mitigation section</h3>
+<ol>
+<li>
+<p><strong>Give a general but relevant fix</strong><br />
+   If you understand the core issue, suggest how it should be handled. No need to be overly technical.<br />
+   Example:  </p>
+<blockquote>
+<p>“Validate ownership on the server before allowing access to this resource.”</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Reference trusted security practices</strong><br />
+   Tying your suggestion to OWASP, secure defaults, or standard protections makes your fix more credible.<br />
+   Example:  </p>
+<blockquote>
+<p>“Implement rate limiting on login endpoints to prevent brute-force attacks.”</p>
+</blockquote>
+</li>
+<li>
+<p><strong>Don’t give vague advice</strong><br />
+   Stuff like “secure the code” or “fix the issue” doesn’t help. Be specific or skip it.<br />
+   Example of what <em>not</em> to write:  </p>
+<blockquote>
+<p>“Just add better protection.”<br />
+   Instead, give something the devs can actually work with.</p>
+</blockquote>
+</li>
+<li>
+<p><strong>If you don’t know, say so clearly</strong><br />
+   It’s okay not to know the exact solution. Just don’t pretend.<br />
+   Example:  </p>
+<blockquote>
+<p>“This seems related to backend auth logic, but I don’t have enough visibility to recommend a fix.”</p>
+</blockquote>
+</li>
+</ol>
+<p>When your fix is thoughtful and actionable, your report stands out. It tells the team: this hacker doesn’t just find problems. They <em>understand</em> them.</p>
+<hr />
+<h2 id="common-mistakes-to-avoid">Common Mistakes to Avoid</h2>
+<p>Even skilled bug hunters can slip up when writing reports. These common errors reduce your chances of getting recognized or rewarded. Avoid them to keep your reports sharp and effective.</p>
+<h3 id="1-missing-or-unclear-reproduction-steps">1. Missing or unclear reproduction steps</h3>
+<p>If you don't make sure that the steps to reproduce a bug are complete and understandable, then the Triage team won't be able to verify it, and that means reduced chances for payout.</p>
+<h3 id="2-including-unnecessary-details">2. Including unnecessary details</h3>
+<p>Only include in your report whats important, don't dump your whole testing process or unecessary details, precision is key.</p>
+<h3 id="3-lacking-solid-proof-of-concept">3. Lacking solid proof of concept</h3>
+<p>Your report must include concrete evidence—screenshots or requests or scripts that demonstrate the bug clearly. Without proof, the report loses credibility.</p>
+<h3 id="4-weak-or-vague-impact-description">4. Weak or vague impact description</h3>
+<p>Explain precisely what the bug allows an attacker to do. Avoid speculation or “might happen” statements. Show the real risks and consequences.</p>
+<h3 id="5-providing-vague-or-generic-fixes">5. Providing vague or generic fixes</h3>
+<p>Suggest clear, practical solutions or best practices. Saying “fix your code” is unhelpful. If you can’t propose a fix, say so honestly.</p>
+<h3 id="6-poor-organization-and-formatting">6. Poor organization and formatting</h3>
+<p>Use clear headings, numbered steps, and concise language. A well-structured report is easier to read and speeds up validation.</p>
+<hr />
+<h2 id="summary-and-final-checks">Summary and Final Checks</h2>
+<p>A well-written bug bounty report is more than just a container for a vulnerability—it is a tool that helps the security team understand, verify, and resolve a flaw quickly and confidently.</p>
+<p>At this stage, all core sections should be complete: the bug has been clearly explained, reproduction steps are precise, proof of concept is irrefutable, impact is justified, and potential fixes are suggested where appropriate.</p>
+<p>Before submission, use the following final checklist to ensure the report meets a high professional standard.</p>
+<h3 id="final-report-checklist">✅ Final Report Checklist</h3>
+<ul>
+<li>[ ] <strong>The Description clearly explains what the bug is and how it works.</strong><br />
+      Includes root cause, affected functionality, and technical context.</li>
+<li>[ ] Steps to Reproduce are clear, numbered, and complete.</li>
+<li>[ ] Payloads, test data, and relevant request details are included.</li>
+<li>[ ] Proof of Concept contains strong technical evidence (e.g. screenshot, HTTP request, or script).</li>
+<li>[ ] The Impact section ties the bug to real-world consequences with justified severity.</li>
+<li>[ ] A suggested mitigation or fix is included, or its absence is clearly stated.</li>
+<li>[ ] The report is logically structured, free of unnecessary content or speculation.</li>
+<li>[ ] Formatting is clean, consistent, and readable (headings, bullets, spacing, etc)..</li>
+</ul>
+<h2 id="effective-reports-in-action">Effective-Reports-in-Action</h2>
+<p>This is an important section , as it will link some Actual reports on actual bugs, this way, you don't just learn the theory, you also see it applied in real time.</p>
+<h3 id="some-good-reports-to-study">Some good reports to study:</h3>
+<p>https://hackerone.com/reports/3165242: Severity: Critical</p>
+<p>https://hackerone.com/reports/2105808: Severity: High</p>
+<p>https://hackerone.com/reports/2633771: Severity: Medium</p>
+<p>https://hackerone.com/reports/1981441: Severity: Low</p>
+<p>https://hackerone.com/reports/3122019: Severity: None</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tracking"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
