@@ -3,13 +3,14 @@
 *The Most Important Skill Besides Actually Finding the Bug*
 ## Table of Contents
 1. [Introduction](#introduction)
-2. [Steps to Reproduce](#steps-to-reproduce)
-3. [Proof of Concept](#proof-of-concept-poc)
-4. [Impact Explanation](#impact-explanation)
-5. [Suggested Fix or Mitigation](#suggested-fix-or-mitigation)
-6. [Common Mistakes to Avoid](#common-mistakes-to-avoid)
-7. [Summary and Final Checks](#summary-and-final-checks)
-8. [Effective Bug Bounty Reports in Action](#Effective-Reports-in-Action)
+2. [Description](#description)
+3. [Steps to Reproduce](#steps-to-reproduce)
+4. [Proof of Concept](#proof-of-concept-poc)
+5. [Impact Explanation](#impact-explanation)
+6. [Suggested Fix or Mitigation](#suggested-fix-or-mitigation)
+7. [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+8. [Summary and Final Checks](#summary-and-final-checks)
+9. [Effective Bug Bounty Reports in Action](#effective-reports-in-action)
 
 ## Introduction
 
