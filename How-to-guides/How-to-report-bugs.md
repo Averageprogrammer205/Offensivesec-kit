@@ -20,6 +20,38 @@ And while finding bugs might sound like the “hard part,” the truth is writin
 **In fact, your ability to explain the bug often decides whether you get rewarded at all. So knowing how to report properly is not a side skill. It’s half the game.**
 
 This guide will walk you through writing *clear*, *valid*, and *professional* bug reports, the kind that get attention, not ignored.
+
+
+---
+
+## Description
+
+**This section explains what the bug *actually is*, how it works, and why it’s even a problem.**
+
+While the “Steps to Reproduce” walks them through *how* to trigger the bug, the Description makes sure they understand *what the core issue is*. Without it, you're just giving directions to a mystery destination.
+
+A strong description shows that:
+- You understand the technical root cause.
+- You aren't just repeating payloads—you know what broke.
+- You're helping the dev/triager mentally process the situation.
+
+### 📌 What to Include in the Description:
+
+1. **What the bug is, clearly and simply**  
+   Example:  
+   > The application fails to validate redirect URLs, allowing open redirection via the `next` parameter on the login page.
+
+2. **How the bug works under the hood**  
+   Even if you don’t have source code access, explain the logic flaw.  
+   > This happens because the server blindly redirects users to any value of the `next` parameter, without checking if it points to a trusted domain.
+
+3. **Any conditions or requirements**  
+   Tell them if the bug only happens under certain situations (e.g., must be logged in, must have a certain role, etc.)
+
+4. **Optional but strong: Explain the root security principle that’s violated**  
+   Tie it back to the OWASP category, if applicable. 
+   > This is a violation of the "Unvalidated Redirects and Forwards" issue, as described in OWASP Top 10 (A10).
+
 ---
 
 ## Steps to Reproduce
