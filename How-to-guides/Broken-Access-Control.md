@@ -44,7 +44,7 @@ It’s the thing that says:
 “You can’t do that.”
 
 **Broken Access Control** is when someone finds a way to bypass that restriction.
-e
+
 When access control fails, users can:
 
 - View or modify other users’ accounts  
@@ -53,4 +53,9 @@ When access control fails, users can:
 
 
 ---
-# (# Unfinished session but still had to push for that progess save )
+
+## Core Broken Access Control Vulnerabilities
+
+(To clear out confusion:**Broken Access Control** is a familiy of bugs, BAC by itself is not a bug)
+
+Now that we know what *Access Control* is and Why *Broken Access Control* is dangerous, let's look at the core of BAC vulnerabilities, starting with **IDOR** or **Indirect Object Reference**, 
