@@ -12,9 +12,7 @@ Welcome to the full list of my bug bounty guides, all available in easy-to-read 
 ## Reporting and Methodology:
 
 - [Writing Effective Bug Reports](https://averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs/)  
-
-# For starters
-- [Getting started on a bug bounty program]()
+- [Registring to a bug bounty report](https://averageprogrammer205.github.io/Offensivesec-kit/Platforms/)
 
 ---
 
