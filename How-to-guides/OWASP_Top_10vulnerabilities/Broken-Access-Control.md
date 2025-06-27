@@ -17,6 +17,9 @@
 
 ## Introduction : What is Access Control 
 
+> **🔗 Check out the full website version of this guide here: (https://Averageprogrammer205.github.io/Offensivesec-kit/Broken-Access-Control)**
+
+
 **Broken Access Control** is one of the most _abused_, _misunderstood_, and _dangerous_ vulnerability classes. Why? Because **Access Control** is what stops users from doing things they’re not supposed to do — like viewing other people’s data, deleting someone else's account, or acting like an admin.  
 If _that_ is broken, a regular user can become unstoppable.
 
