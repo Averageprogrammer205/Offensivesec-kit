@@ -12,13 +12,13 @@
         <meta name="author" content="Bytephanto0m">
       
       
-        <link rel="canonical" href="https://Averageprogrammer205.github.io/Offensivesec-kit/Web-Guides/">
+        <link rel="canonical" href="https://Averageprogrammer205.github.io/Offensivesec-kit/Broken-Access-Control/">
       
       
-        <link rel="prev" href="../How-to-report-bugs/">
+        <link rel="prev" href="..">
       
       
-        <link rel="next" href="../Platforms/">
+        <link rel="next" href="../How-to-report-bugs/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +26,7 @@
     
     
       
-        <title>Web Guides - Bug Bounty Guide</title>
+        <title>Broken Access Control - Bug Bounty Guide</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#complete-guide-catalog-web-versions" class="md-skip">
+        <a href="#broken-access-control-learn-it-by-hacking-it" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Web Guides
+              Broken Access Control
             
           </span>
         </div>
@@ -221,10 +221,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../Broken-Access-Control/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Broken Access Control
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -235,6 +257,62 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table of Contents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-what-is-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction : What is Access Control
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-broken-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧠 What is Broken Access Control?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-broken-access-control-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Broken Access Control Vulnerabilities
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -265,32 +343,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Web Guides
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Web-Guides/" class="md-nav__link">
         
   
   
@@ -301,53 +357,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#recon-guides" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recon Guides:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#web-application-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Web Application Testing:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reporting-and-methodology" class="md-nav__link">
-    <span class="md-ellipsis">
-      Reporting and Methodology:
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -401,27 +410,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#recon-guides" class="md-nav__link">
+  <a href="#table-of-contents" class="md-nav__link">
     <span class="md-ellipsis">
-      Recon Guides:
+      Table of Contents
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#web-application-testing" class="md-nav__link">
+  <a href="#introduction-what-is-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      Web Application Testing:
+      Introduction : What is Access Control
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#reporting-and-methodology" class="md-nav__link">
+  <a href="#what-is-broken-access-control" class="md-nav__link">
     <span class="md-ellipsis">
-      Reporting and Methodology:
+      🧠 What is Broken Access Control?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-broken-access-control-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      Core Broken Access Control Vulnerabilities
     </span>
   </a>
   
@@ -443,19 +461,60 @@
 
 
 
-<h1 id="complete-guide-catalog-web-versions">Complete Guide Catalog (Web Versions)</h1>
-<p>Welcome to the full list of my bug bounty guides, all available in easy-to-read web format. I decided to add site versions of my courses so that accessing them becomes more user friendly,so here are the site versions of my guides</p>
-<h2 id="recon-guides">Recon Guides:</h2>
-<p>(coming soon)</p>
-<h2 id="web-application-testing">Web Application Testing:</h2>
-<p>(coming soon)</p>
-<h2 id="reporting-and-methodology">Reporting and Methodology:</h2>
+<h1 id="broken-access-control-learn-it-by-hacking-it">Broken Access Control – Learn It by Hacking It</h1>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol>
+<li>What is Access Control?</li>
+<li>Why It Matters (Real World)</li>
+<li>Core BAC Vulnerabilities<ul>
+<li>IDOR</li>
+<li>Role Manipulation ✅</li>
+<li>Method Tampering</li>
+<li>Access-Control Headers Abuse</li>
+</ul>
+</li>
+<li>Labs &amp; Practice (Live hacking)</li>
+<li>Reporting Like a Pro (Writeups &amp; Proof)</li>
+<li>Defense Strategies (For completeness)</li>
+<li>Final Checklist to Think Like a BAC Hunter</li>
+</ol>
+<hr />
+<h2 id="introduction-what-is-access-control">Introduction : What is Access Control</h2>
+<blockquote>
+<p><strong>🔗 Check out the full website version of this guide here: (https://Averageprogrammer205.github.io/Offensivesec-kit/Broken-Access-Control)</strong></p>
+</blockquote>
+<p><strong>Broken Access Control</strong> is one of the most <em>abused</em>, <em>misunderstood</em>, and <em>dangerous</em> vulnerability classes. Why? Because <strong>Access Control</strong> is what stops users from doing things they’re not supposed to do — like viewing other people’s data, deleting someone else's account, or acting like an admin.<br />
+If <em>that</em> is broken, a regular user can become unstoppable.</p>
+<p>This guide will teach you:</p>
 <ul>
-<li><a href="https://averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs/">Writing Effective Bug Reports</a>  </li>
-<li><a href="https://averageprogrammer205.github.io/Offensivesec-kit/Platforms/">Registring to a bug bounty report</a></li>
+<li>What BAC really is (beyond textbook definitions),  </li>
+<li>What it can look like in the wild,  </li>
+<li>Where and how to hunt for it like a real attacker,  </li>
+<li>How to test it, prove it, and explain the impact,  </li>
+<li>And how to fix it (yes, fixing matters if you want respect).</li>
+</ul>
+<p>We’ll wrap up with real examples and a complete checklist to help you recognize BAC anywhere.</p>
+<hr />
+<h2 id="what-is-broken-access-control">🧠 What is Broken Access Control?</h2>
+<p>Access control stops users from doing things they’re not allowed to do. It prevents:</p>
+<ul>
+<li>A regular user from accessing admin functionality  </li>
+<li>A customer from viewing someone else’s data  </li>
+<li>Any low-privilege actor from performing high-privilege actions</li>
+</ul>
+<p>It’s the thing that says:<br />
+“You can’t do that.”</p>
+<p><strong>Broken Access Control</strong> is when someone finds a way to bypass that restriction.</p>
+<p>When access control fails, users can:</p>
+<ul>
+<li>View or modify other users’ accounts  </li>
+<li>Escalate privileges horizontally or vertically  </li>
+<li>Perform unauthorized business functions like issuing refunds or deleting data reserved for admins  </li>
 </ul>
 <hr />
-<p><em>This list is updated regularly as I publish new guides.</em></p>
+<h2 id="core-broken-access-control-vulnerabilities">Core Broken Access Control Vulnerabilities</h2>
+<p>(To clear out confusion:<strong>Broken Access Control</strong> is a familiy of bugs, BAC by itself is not a bug)</p>
+<p>Now that we know what <em>Access Control</em> is and Why <em>Broken Access Control</em> is dangerous, let's look at the core of BAC vulnerabilities, starting with <strong>IDOR</strong> or <strong>Indirect Object Reference</strong>, </p>
 
 
 
