@@ -14,7 +14,7 @@
 
 ## Introduction
 
-> **🔗 Check out the full website version of this guide here: (https://Averageprogrammer205.github.io/Offensivesec-kit/)*
+> **🔗 Check out the full website version of this guide here: (https://Averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs)**
 
 As a bug bounty hunter, your job isn’t just to find vulnerabilities, it’s to clearly explain them too.
 
@@ -235,20 +235,6 @@ Before submission, use the following final checklist to ensure the report meets 
 - [ ] The report is logically structured, free of unnecessary content or speculation.
 - [ ] Formatting is clean, consistent, and readable (headings, bullets, spacing, etc)..
 
-## Effective-Reports-in-Action
+## Effective Bug Bounty Reports in Action
 
-This is an important section , as it will link some Actual reports on actual bugs, this way, you don't just learn the theory, you also see it applied in real time.
-
-### Some good reports to study:
-https://hackerone.com/reports/3165242: Severity: Critical
-
-https://hackerone.com/reports/2105808: Severity: High
-
-https://hackerone.com/reports/2633771: Severity: Medium
-
-https://hackerone.com/reports/1981441: Severity: Low
-
-https://hackerone.com/reports/3122019: Severity: None
-
-
-
+(// im gonna do analysis of real reports here.... coming soon in few days)

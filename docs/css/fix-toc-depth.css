@@ -14,14 +14,48 @@ html {
 
 /* 3) Sidebar container */
 .md-nav--secondary {
-  width: 320px !important;
+  /* Auto width to fit content, but cap at 60vw for sanity */
+  width: auto !important;
+  min-width: 200px !important;
+  max-width: 60vw !important;
+  display: inline-block !important;
   box-sizing: border-box !important;
   padding-left: 0 !important;
   border-left: 3px solid #00bfa6 !important;
   background: #fafbfc !important;
-  overflow-x: hidden !important;
+  overflow-x: visible !important;
   overflow-y: auto !important;
   box-shadow: inset -1px 0 0 rgba(255,255,255,0.1) !important;
+}
+
+/* Sidebar scroll wrapper: auto width, no forced scroll */
+.md-sidebar__scrollwrap {
+  width: auto !important;
+  min-width: 200px !important;
+  max-width: 60vw !important;
+  display: inline-block !important;
+  overflow-x: visible !important;
+}
+
+/* Sidebar inner: auto width */
+.md-sidebar__inner {
+  width: auto !important;
+  min-width: 200px !important;
+  max-width: 60vw !important;
+  display: inline-block !important;
+}
+
+/* TOC list: auto width, wrap naturally */
+.md-nav--secondary ul.md-nav__list {
+  width: auto !important;
+  min-width: 200px !important;
+  max-width: 60vw !important;
+  display: inline-block !important;
+  white-space: normal !important;
+  overflow-x: visible !important;
+  box-sizing: border-box !important;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 /* 4) Remove default list padding/margin */
@@ -115,4 +149,17 @@ html {
   margin: 0 !important;
   /* no transform—only hover nudges */
   transform: none !important;
+}
+
+/* Shrink TOC font for better fit, keep wrapping natural and clean */
+.md-nav--secondary .md-nav__link,
+.md-nav--secondary .md-nav__link > .md-ellipsis {
+  font-size: 0.75rem !important;
+  line-height: 1.3 !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+nav.md-nav--primary {
+  display: none !important;
 }

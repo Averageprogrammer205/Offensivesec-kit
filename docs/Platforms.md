@@ -1,5 +1,7 @@
 # How to Register as a Bug Bounty Hunter on HackerOne and Bugcrowd
 
+> **🔗 Check out the full website version of this guide here: (https://Averageprogrammer205.github.io/Offensivesec-kit/Platforms)**
+
 This guide explains how to register on two of the top bug bounty platforms—**HackerOne** and **Bugcrowd**—with step-by-step instructions for both adults and minors.
 
 ---
@@ -8,8 +10,7 @@ This guide explains how to register on two of the top bug bounty platforms—**H
 
 ### For Adults (18+)
 
-
-1. Go to [HackerOne Signup](https://hackerone.com/sign_up).
+1. Go to [HackerOne Signup](https://hackerone.com/signup).
 2. Fill in your **real** personal information:
    - Full name  
    - Email address  
