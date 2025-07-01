@@ -49,7 +49,7 @@
       
     
     
-      <link rel="stylesheet" href="/Offensivesec-kit/css/fix-toc-depth.css">
+      <link rel="stylesheet" href="/Offensivesec-kit/css/Stylesheet.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -305,15 +305,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
       Description
@@ -545,9 +536,96 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#effective-bug-bounty-reports-in-action" class="md-nav__link">
+  <a href="#studying-a-bug-bounty-report-ssrf-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Effective Bug Bounty Reports in Action
+      Studying a Bug Bounty Report: SSRF Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-summary-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Summary / Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#studying-a-bug-bounty-report-ssrf-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Studying a Bug Bounty Report: SSRF Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dissecting-an-effective-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Dissecting an Effective Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-steps-to-reproduce-flexible-yet-precise" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Steps to Reproduce: Flexible Yet Precise
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Steps to Reproduce: Flexible Yet Precise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-why-this-proof-of-concept-stands-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Why This Proof of Concept Stands Out
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-suggested-fix-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Suggested Fix / Mitigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-impact-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Impact Explanation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-final-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Final Notes
     </span>
   </a>
   
@@ -641,15 +719,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    <span class="md-ellipsis">
-      Introduction
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#description" class="md-nav__link">
     <span class="md-ellipsis">
       Description
@@ -881,9 +950,96 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#effective-bug-bounty-reports-in-action" class="md-nav__link">
+  <a href="#studying-a-bug-bounty-report-ssrf-example" class="md-nav__link">
     <span class="md-ellipsis">
-      Effective Bug Bounty Reports in Action
+      Studying a Bug Bounty Report: SSRF Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-summary-introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Summary / Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#studying-a-bug-bounty-report-ssrf-example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Studying a Bug Bounty Report: SSRF Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-dissecting-an-effective-description" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Dissecting an Effective Description
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-steps-to-reproduce-flexible-yet-precise" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Steps to Reproduce: Flexible Yet Precise
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Steps to Reproduce: Flexible Yet Precise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#3-why-this-proof-of-concept-stands-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Why This Proof of Concept Stands Out
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-suggested-fix-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Suggested Fix / Mitigation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-impact-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Impact Explanation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-final-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Final Notes
     </span>
   </a>
   
@@ -909,7 +1065,6 @@
 <p><em>The Most Important Skill Besides Actually Finding the Bug</em></p>
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
-<li><a href="#introduction">Introduction</a></li>
 <li><a href="#description">Description</a></li>
 <li><a href="#steps-to-reproduce">Steps to Reproduce</a></li>
 <li><a href="#proof-of-concept-poc">Proof of Concept</a></li>
@@ -917,11 +1072,19 @@
 <li><a href="#suggested-fix-or-mitigation">Suggested Fix or Mitigation</a></li>
 <li><a href="#common-mistakes-to-avoid">Common Mistakes to Avoid</a></li>
 <li><a href="#summary-and-final-checks">Summary and Final Checks</a></li>
-<li><a href="#effective-reports-in-action">Effective Bug Bounty Reports in Action</a></li>
+<li><a href="#studying-a-bug-bounty-report-ssrf-example">Studying a Bug Bounty Report: SSRF Example</a><ul>
+<li><a href="#1-summary--introduction">1. Summary / Introduction</a></li>
+<li><a href="#2-dissecting-an-effective-description">2. Dissecting an Effective Description</a></li>
+<li><a href="#3-steps-to-reproduce-flexible-yet-precise">3. Steps to Reproduce: Flexible Yet Precise</a></li>
+<li><a href="#3-why-this-proof-of-concept-stands-out">3. Why This Proof of Concept Stands Out</a></li>
+<li><a href="#4-suggested-fix--mitigation">4. Suggested Fix / Mitigation</a></li>
+<li><a href="#5-impact-explanation">5. Impact Explanation</a></li>
+<li><a href="#6-final-notes">6. Final Notes</a></li>
+</ul>
+</li>
 </ol>
-<h2 id="introduction">Introduction</h2>
 <blockquote>
-<p><strong>🔗 Check out the full website version of this guide here: (https://Averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs)</strong></p>
+<p><strong>🔗 Check out the full website version of this guide here: <a href="https://Averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs">https://Averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs</a></strong></p>
 </blockquote>
 <p>As a bug bounty hunter, your job isn’t just to find vulnerabilities, it’s to clearly explain them too.</p>
 <p>And while finding bugs might sound like the “hard part,” the truth is writing a solid report is just as important. A good report helps the triage team quickly understand what’s wrong, how to reproduce it, and why it matters. That means <em>faster</em> responses, <em>fewer</em> misunderstandings, and <em>way better odds of getting paid.</em></p>
@@ -1135,8 +1298,138 @@ This vulnerability allows an unauthenticated attacker to access any user’s boo
 <li>[ ] The report is logically structured, free of unnecessary content or speculation.</li>
 <li>[ ] Formatting is clean, consistent, and readable (headings, bullets, spacing, etc)..</li>
 </ul>
-<h2 id="effective-bug-bounty-reports-in-action">Effective Bug Bounty Reports in Action</h2>
-<p>(// im gonna do analysis of real reports here.... coming soon in few days)</p>
+<h2 id="studying-a-bug-bounty-report-ssrf-example">Studying a Bug Bounty Report: SSRF Example</h2>
+<p>We’ll analyze each part of a real bug bounty report to see <em>how</em> it’s done well and <em>why</em> it works. You can add screenshots for each section as proof.</p>
+<hr />
+<h2 id="1-summary-introduction">1. Summary / Introduction</h2>
+<p><strong>What the reporter did:</strong><br />
+- Clearly states the bug: Server-Side Request Forgery (SSRF) in the Lichess game export feature.<br />
+- Explains where it happens and why it’s critical (public endpoints, no authentication).</p>
+<p><strong>Why it works:</strong><br />
+- Gives a quick, simple overview.<br />
+- Sets expectations for what the report will show.  </p>
+<h2 id="studying-a-bug-bounty-report-ssrf-example_1">Studying a Bug Bounty Report: SSRF Example</h2>
+<h2 id="_1"><img alt="" src="../images/Eg-summary.png" /></h2>
+<h2 id="2-dissecting-an-effective-description">2. Dissecting an Effective Description</h2>
+<p>The reporter demonstrates masterclass vulnerability description through:</p>
+<p><strong>1. Targeted Technical Focus</strong>  </p>
+<p><em>Notice how they highlight only the relevant code flow:</em>
+- The user-controlled input (<code>get("players")</code>)
+- The unsafe processing chain (<code>realPlayerApi.apply</code>)
+- The dangerous outcome (<code>ws.url(url).get()</code>)</p>
+<p><strong>2. Strategic Omissions</strong><br />
+They intentionally exclude:
+- Unrelated code sections
+- Theoretical attack scenarios
+- Personal testing narrative</p>
+<p><strong>3. Clarity Through Constraint</strong><br />
+The entire technical explanation uses just 3 code snippets and 2 bridging sentences. This forces:
+- Every word to serve a purpose
+- The reader's attention to stay focused
+- Quick comprehension of the core flaw</p>
+<p><strong>What Makes This Work</strong><br />
+1. <strong>Code-as-Evidence</strong><br />
+   The snippets are the actual vulnerability pathway.</p>
+<ol>
+<li>
+<p><strong>Minimalist Commentary</strong><br />
+   The reporter lets the dangerous code patterns speak for themselves.</p>
+</li>
+<li>
+<p><strong>Logical Flow</strong><br />
+   Input → Processing → Dangerous Outcome forms a complete "crime scene" picture.</p>
+</li>
+</ol>
+<p>💡 <em>Pro Tip:</em><br />
+Write your description, then cut 30% of the words. This forces essentialism.</p>
+<p><img alt="" src="../images/Description.png" /></p>
+<hr />
+<h2 id="3-steps-to-reproduce-flexible-yet-precise">3. Steps to Reproduce: Flexible Yet Precise</h2>
+<p>This reporter took an interesting approach by weaving the reproduction steps into the Description section. This works because:</p>
+<ol>
+<li>
+<p><strong>For Simple Bugs:</strong> When the vulnerability is straightforward (like this SSRF), combining description and reproduction can create a more fluid narrative. The reader naturally follows:<br />
+<em>"Here's the flawed code → Here's how we exploit it"</em></p>
+</li>
+<li>
+<p><strong>Strategic Variation:</strong>  </p>
+</li>
+<li><strong>Complex bugs:</strong> Always use separate sections (e.g., for multi-step privilege escalations)  </li>
+<li>
+<p><strong>Simple bugs:</strong> Can merge if it improves readability (like this example)  </p>
+</li>
+<li>
+<p><strong>Why This Works Here:</strong>  </p>
+</li>
+<li>Single exploitation method (URL manipulation)  </li>
+<li>No conditional steps (works 100% reproducibly)  </li>
+<li>Tight connection between cause and effect  </li>
+</ol>
+<h3 id="3-why-this-proof-of-concept-stands-out">3. Why This Proof of Concept Stands Out</h3>
+<p>This is where the reporter demonstrates professional-grade evidence collection. Notice how they:</p>
+<ol>
+<li>
+<p><strong>Establish Credibility Upfront</strong><br />
+   By noting they discovered the bug through source code analysis <em>and</em> confirmed it live, the reporter shows they've done both theoretical and practical validation. This dual-verification approach makes triagers immediately take the report seriously.</p>
+</li>
+<li>
+<p><strong>Structure Evidence Logically</strong><br />
+   The sequence flows perfectly:  </p>
+</li>
+<li><strong>Discovery context</strong> (source code + live confirmation)  </li>
+<li><strong>Reproduction steps</strong> (clear numbered instructions)  </li>
+<li>
+<p><strong>Visual proof</strong> (screenshots of each critical stage)  </p>
+</li>
+<li>
+<p><strong>Efficiency in Communication</strong><br />
+   The reporter avoids:  </p>
+</li>
+<li>Overloading with redundant images  </li>
+<li>Leaving gaps between steps  </li>
+<li>
+<p>Using unannotated screenshots  </p>
+</li>
+<li>
+<p><strong>Used Visuals well</strong>
+   Masterful use of visuals :
+   First step : <img alt="" src="../images/firststep.png" />
+   The outcome after following the rest of the steps :<img alt="" src="../images/Restofsteps.png" /></p>
+</li>
+</ol>
+<p><strong>Key Takeaway:</strong><br />
+This works because it makes the triager's job effortless - they can validate the bug in under 2 minutes without asking follow-up questions. That's the gold standard.</p>
+<hr />
+<h2 id="4-suggested-fix-mitigation">4. Suggested Fix / Mitigation</h2>
+<p><strong>What the reporter did:</strong><br />
+- Suggested URL validation, whitelisting, authentication, and IP blocking.<br />
+- Specified the exact code location for the fix.<br />
+- Referred to OWASP CWE for credibility.</p>
+<p><strong>Why it works:</strong><br />
+- Provides actionable advice, not vague “fix your code.”<br />
+- Shows mindset of builder, not just breaker.<br />
+- Makes triage and dev job easier.</p>
+<hr />
+<h2 id="5-impact-explanation">5. Impact Explanation</h2>
+<p><strong>What the reporter did:</strong><br />
+- Listed real-world consequences: credential theft, internal network scanning, accessing private APIs.<br />
+- Emphasized the risk due to public and unauthenticated endpoints.<br />
+- Used clear, strong language.</p>
+<p><strong>Why it works:</strong><br />
+- Proves the bug is serious, not theoretical.<br />
+- Justifies high severity and payout potential.<br />
+- Helps triage team understand urgency.</p>
+<hr />
+<h2 id="6-final-notes">6. Final Notes</h2>
+<ul>
+<li>Report is well-structured and easy to read.  </li>
+<li>Each section covers its purpose fully.  </li>
+<li>Professional tone and no fluff.  </li>
+</ul>
+<hr />
+<p><strong>Keep this structure in mind when writing your reports.</strong>  </p>
+<p>Clear summaries, solid technical explanations, exact reproduction steps, strong proof, concrete impact, and useful fixes are the keys to success.</p>
+<hr />
 
 
 
@@ -1189,8 +1482,6 @@ This vulnerability allows an unauthenticated attacker to access any user’s boo
     
     
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
-      
-        <script src="/Offensivesec-kit/js/hide.js"></script>
       
     
   </body>

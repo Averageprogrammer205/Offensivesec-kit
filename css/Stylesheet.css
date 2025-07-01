@@ -1,0 +1,28 @@
+/* 1) Smooth anchor scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+h1 {
+  color: #0f4ee1 !important; /* pink */
+  text-shadow: 0 0 8px #0f4ee1, 0 0 20px #0f4ee1 !important;
+  margin: 1.5em 0 !important;
+  /* Remove position and z-index if not needed */
+  position: static !important; /* or just remove this line */
+  z-index: auto !important;    /* default */
+}
+
+
+/* Add a light gray background and padding to all images in content */
+.md-typeset img {
+  background-color: #f0f0f0 !important; /* soft neutral gray */
+  padding: 8px !important;
+  border-radius: 6px !important;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.8) !important;
+  display: block;
+  margin: 1em auto !important; /* center with spacing */
+  max-width: 100%;
+}
+.md-typeset img {
+  border: 1px solid #ccc !important;
+}
