@@ -2,19 +2,24 @@
 
 *The Most Important Skill Besides Actually Finding the Bug*
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [Description](#description)
-3. [Steps to Reproduce](#steps-to-reproduce)
-4. [Proof of Concept](#proof-of-concept-poc)
-5. [Impact Explanation](#impact-explanation)
-6. [Suggested Fix or Mitigation](#suggested-fix-or-mitigation)
-7. [Common Mistakes to Avoid](#common-mistakes-to-avoid)
-8. [Summary and Final Checks](#summary-and-final-checks)
-9. [Effective Bug Bounty Reports in Action](#effective-reports-in-action)
+1. [Description](#description)
+2. [Steps to Reproduce](#steps-to-reproduce)
+3. [Proof of Concept](#proof-of-concept-poc)
+4. [Impact Explanation](#impact-explanation)
+5. [Suggested Fix or Mitigation](#suggested-fix-or-mitigation)
+6. [Common Mistakes to Avoid](#common-mistakes-to-avoid)
+7. [Summary and Final Checks](#summary-and-final-checks)
+8. [Studying a Bug Bounty Report: SSRF Example](#studying-a-bug-bounty-report-ssrf-example)
+    - [1. Summary / Introduction](#1-summary--introduction)
+    - [2. Dissecting an Effective Description](#2-dissecting-an-effective-description)
+    - [3. Steps to Reproduce: Flexible Yet Precise](#3-steps-to-reproduce-flexible-yet-precise)
+    - [3. Why This Proof of Concept Stands Out](#3-why-this-proof-of-concept-stands-out)
+    - [4. Suggested Fix / Mitigation](#4-suggested-fix--mitigation)
+    - [5. Impact Explanation](#5-impact-explanation)
+    - [6. Final Notes](#6-final-notes)
 
-## Introduction
+> **🔗 Check out the full website version of this guide here: [https://Averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs](https://Averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs)**
 
-> **🔗 Check out the full website version of this guide here: (https://Averageprogrammer205.github.io/Offensivesec-kit/How-to-report-bugs)**
 
 As a bug bounty hunter, your job isn’t just to find vulnerabilities, it’s to clearly explain them too.
 
@@ -235,6 +240,154 @@ Before submission, use the following final checklist to ensure the report meets 
 - [ ] The report is logically structured, free of unnecessary content or speculation.
 - [ ] Formatting is clean, consistent, and readable (headings, bullets, spacing, etc)..
 
-## Effective Bug Bounty Reports in Action
 
-(// im gonna do analysis of real reports here.... coming soon in few days)
+## Studying a Bug Bounty Report: SSRF Example
+
+We’ll analyze each part of a real bug bounty report to see *how* it’s done well and *why* it works. You can add screenshots for each section as proof.
+
+---
+
+## 1. Summary / Introduction
+
+**What the reporter did:**  
+- Clearly states the bug: Server-Side Request Forgery (SSRF) in the Lichess game export feature.  
+- Explains where it happens and why it’s critical (public endpoints, no authentication).
+
+**Why it works:**  
+- Gives a quick, simple overview.  
+- Sets expectations for what the report will show.  
+## Studying a Bug Bounty Report: SSRF Example
+
+
+![](images/Eg-summary.png)
+---
+
+## 2. Dissecting an Effective Description
+
+The reporter demonstrates masterclass vulnerability description through:
+
+**1. Targeted Technical Focus**  
+ 
+*Notice how they highlight only the relevant code flow:*
+- The user-controlled input (`get("players")`)
+- The unsafe processing chain (`realPlayerApi.apply`)
+- The dangerous outcome (`ws.url(url).get()`)
+
+**2. Strategic Omissions**  
+They intentionally exclude:
+- Unrelated code sections
+- Theoretical attack scenarios
+- Personal testing narrative
+
+**3. Clarity Through Constraint**  
+The entire technical explanation uses just 3 code snippets and 2 bridging sentences. This forces:
+- Every word to serve a purpose
+- The reader's attention to stay focused
+- Quick comprehension of the core flaw
+
+**What Makes This Work**  
+1. **Code-as-Evidence**  
+   The snippets are the actual vulnerability pathway.
+
+2. **Minimalist Commentary**  
+   The reporter lets the dangerous code patterns speak for themselves.
+
+3. **Logical Flow**  
+   Input → Processing → Dangerous Outcome forms a complete "crime scene" picture.
+
+💡 *Pro Tip:*  
+Write your description, then cut 30% of the words. This forces essentialism.
+
+![](images/Description.png)
+
+
+---
+
+## 3. Steps to Reproduce: Flexible Yet Precise
+
+This reporter took an interesting approach by weaving the reproduction steps into the Description section. This works because:
+
+1. **For Simple Bugs:** When the vulnerability is straightforward (like this SSRF), combining description and reproduction can create a more fluid narrative. The reader naturally follows:  
+   *"Here's the flawed code → Here's how we exploit it"*
+
+2. **Strategic Variation:**  
+   - **Complex bugs:** Always use separate sections (e.g., for multi-step privilege escalations)  
+   - **Simple bugs:** Can merge if it improves readability (like this example)  
+
+3. **Why This Works Here:**  
+   - Single exploitation method (URL manipulation)  
+   - No conditional steps (works 100% reproducibly)  
+   - Tight connection between cause and effect  
+
+### 3. Why This Proof of Concept Stands Out
+
+This is where the reporter demonstrates professional-grade evidence collection. Notice how they:
+
+1. **Establish Credibility Upfront**  
+   By noting they discovered the bug through source code analysis *and* confirmed it live, the reporter shows they've done both theoretical and practical validation. This dual-verification approach makes triagers immediately take the report seriously.
+
+2. **Structure Evidence Logically**  
+   The sequence flows perfectly:  
+   - **Discovery context** (source code + live confirmation)  
+   - **Reproduction steps** (clear numbered instructions)  
+   - **Visual proof** (screenshots of each critical stage)  
+
+4. **Efficiency in Communication**  
+   The reporter avoids:  
+   - Overloading with redundant images  
+   - Leaving gaps between steps  
+   - Using unannotated screenshots  
+
+5. **Used Visuals well**
+   Masterful use of visuals :
+   First step : ![](images/firststep.png)
+   The outcome after following the rest of the steps :![](images/Restofsteps.png)
+
+**Key Takeaway:**  
+This works because it makes the triager's job effortless - they can validate the bug in under 2 minutes without asking follow-up questions. That's the gold standard.
+
+
+---
+
+## 4. Suggested Fix / Mitigation
+
+**What the reporter did:**  
+- Suggested URL validation, whitelisting, authentication, and IP blocking.  
+- Specified the exact code location for the fix.  
+- Referred to OWASP CWE for credibility.
+
+**Why it works:**  
+- Provides actionable advice, not vague “fix your code.”  
+- Shows mindset of builder, not just breaker.  
+- Makes triage and dev job easier.
+
+
+---
+## 5. Impact Explanation
+
+**What the reporter did:**  
+- Listed real-world consequences: credential theft, internal network scanning, accessing private APIs.  
+- Emphasized the risk due to public and unauthenticated endpoints.  
+- Used clear, strong language.
+
+**Why it works:**  
+- Proves the bug is serious, not theoretical.  
+- Justifies high severity and payout potential.  
+- Helps triage team understand urgency.
+
+
+---
+## 6. Final Notes
+
+- Report is well-structured and easy to read.  
+- Each section covers its purpose fully.  
+- Professional tone and no fluff.  
+
+---
+
+**Keep this structure in mind when writing your reports.**  
+
+Clear summaries, solid technical explanations, exact reproduction steps, strong proof, concrete impact, and useful fixes are the keys to success.
+
+---
+
