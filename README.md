@@ -1,6 +1,6 @@
 # My Bug Bounty Journey & Learning Repo
 
-This is my personal bug bounty learning space — where I create **one solid guide at a time**, build **tools as I go**, and store **all my findings and reports**.
+This is my personal bug bounty learning space — where I create **one solid guide at a time** and store **all my findings and reports**.
 
 ---
 
